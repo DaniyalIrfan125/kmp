@@ -1,13 +1,13 @@
-package com.example.firstkmp
+package com.example.watchlist
 
 import androidx.compose.ui.window.ComposeUIViewController
-import com.example.di.initKoin
+import com.example.feature.watchlist.initFeatureKoin
 
 private var koinStarted = false
 
 fun MainViewController() = ComposeUIViewController {
     if (!koinStarted) {
-        initKoin()
+        initFeatureKoin()
         koinStarted = true
     }
     App()

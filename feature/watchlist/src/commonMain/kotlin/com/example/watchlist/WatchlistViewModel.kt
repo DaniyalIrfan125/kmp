@@ -1,9 +1,8 @@
-package com.example.firstkmp.shared.viewmodels
+package com.example.watchlist
 
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.firstkmp.shared.repository.WatchlistRepository
 import com.example.model.FavoriteCoin
 import com.example.model.PriceDirection
 import com.example.model.PriceInfo

@@ -1,4 +1,4 @@
-package com.example.firstkmp
+package com.example.watchlist
 
 
 import androidx.compose.animation.core.Spring
@@ -21,7 +21,6 @@ import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -55,11 +54,10 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.firstkmp.shared.formatPrice
-import com.example.model.PriceInfo
 import com.example.model.PriceDirection
-import com.example.firstkmp.shared.viewmodels.WatchlistViewModel
 import org.koin.compose.viewmodel.koinViewModel
+import androidx.compose.foundation.lazy.items
+import kotlin.text.get
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -276,31 +274,3 @@ fun Sparkline(
         )
     }
 }
-//@Composable
-//fun CoinRow(
-//    coinId: String,
-//    price: Double,
-//    isFavorited: Boolean,
-//    onToggleFavorite: () -> Unit,
-//    onClick: () -> Unit
-//) {
-//    val scale by animateFloatAsState(
-//        targetValue = if (isFavorited) 1.2f else 1f,
-//        animationSpec = spring(
-//            dampingRatio = Spring.DampingRatioMediumBouncy,
-//            stiffness = Spring.StiffnessMedium
-//        ),
-//        finishedListener = { /* could trigger a settle-back if desired */ }
-//    )
-//
-//    // ...existing displayName, Card, Row code...
-//
-//    IconButton(onClick = onToggleFavorite) {
-//        Icon(
-//            imageVector = if (isFavorited) Icons.Filled.Star else Icons.Outlined.StarBorder,
-//            contentDescription = if (isFavorited) "Remove from favorites" else "Add to favorites",
-//            tint = if (isFavorited) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
-//            modifier = Modifier.graphicsLayer(scaleX = scale, scaleY = scale)
-//        )
-//    }
-//}

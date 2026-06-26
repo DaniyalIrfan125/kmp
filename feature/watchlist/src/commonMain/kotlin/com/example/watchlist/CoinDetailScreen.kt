@@ -1,4 +1,4 @@
-package com.example.firstkmp.shared
+package com.example.watchlist
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

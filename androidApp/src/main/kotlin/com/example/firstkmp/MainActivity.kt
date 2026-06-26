@@ -8,8 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.database.AppContextProvider
 import com.example.di.initKoin
-import com.example.firstkmp.shared.module.watchlistFeatureModule
+import com.example.feature.watchlist.watchlistFeatureModule
+import com.example.watchlist.App
 import org.koin.core.context.loadKoinModules
+
 
 
 class MainActivity : ComponentActivity() {

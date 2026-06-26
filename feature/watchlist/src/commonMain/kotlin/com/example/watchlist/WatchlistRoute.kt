@@ -1,4 +1,4 @@
-package com.example.firstkmp.shared
+package com.example.watchlist
 
 import kotlinx.serialization.Serializable
 

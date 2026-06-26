@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+
 }
 
 kotlin {
@@ -12,7 +13,7 @@ kotlin {
     }
 }
 dependencies {
-    implementation(projects.shared)
+//    implementation(projects.shared)
 
     implementation(libs.androidx.activity.compose)
 
@@ -20,8 +21,10 @@ dependencies {
     debugImplementation(libs.compose.uiTooling)
     implementation(libs.koin.core)
 
+
     implementation(project(":core:database"))
     implementation(project(":core:di"))
+    implementation(project(":feature:watchlist"))
 }
 
 android {

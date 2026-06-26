@@ -1,13 +1,12 @@
-package com.example.firstkmp.shared.repository
-
+package com.example.watchlist
 
 import com.example.database.AppDatabase
-import com.example.model.PriceInfo
-import kotlinx.coroutines.flow.Flow
 import com.example.database.toDomainModel
 import com.example.database.toEntity
 import com.example.model.FavoriteCoin
+import com.example.model.PriceInfo
 import com.example.network.fetchCryptoPrices
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class WatchlistRepository(
