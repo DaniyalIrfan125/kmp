@@ -70,6 +70,8 @@ kotlin {
             implementation(libs.ktor.client.logging)
 
             implementation(libs.navigation.compose)
+
+            implementation(project(":core:model"))
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

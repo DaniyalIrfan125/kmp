@@ -56,7 +56,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.firstkmp.shared.formatPrice
-import com.example.firstkmp.shared.viewmodels.PriceDirection
+import com.example.model.PriceInfo
+import com.example.model.PriceDirection
 import com.example.firstkmp.shared.viewmodels.WatchlistViewModel
 import org.koin.compose.viewmodel.koinViewModel
 

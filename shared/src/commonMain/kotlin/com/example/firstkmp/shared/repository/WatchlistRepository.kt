@@ -2,8 +2,8 @@ package com.example.firstkmp.shared.repository
 
 import com.example.firstkmp.shared.AppDatabase
 import com.example.firstkmp.shared.FavoriteCoin
-import com.example.firstkmp.shared.PriceInfo
 import com.example.firstkmp.shared.fetchCryptoPrices
+import com.example.model.PriceInfo
 import kotlinx.coroutines.flow.Flow
 
 class WatchlistRepository(

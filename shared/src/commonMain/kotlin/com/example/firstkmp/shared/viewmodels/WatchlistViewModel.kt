@@ -4,7 +4,6 @@ package com.example.firstkmp.shared.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.firstkmp.shared.FavoriteCoin
-import com.example.firstkmp.shared.PriceInfo
 import com.example.firstkmp.shared.repository.WatchlistRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -13,14 +12,15 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-
+import com.example.model.PriceInfo
+import com.example.model.PriceDirection
 import androidx.lifecycle.viewModelScope
 
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlin.collections.mapValues
 
-enum class PriceDirection { UP, DOWN, UNCHANGED }
 
 data class WatchlistUiState(
     val prices: Map<String, PriceInfo> = emptyMap(),
