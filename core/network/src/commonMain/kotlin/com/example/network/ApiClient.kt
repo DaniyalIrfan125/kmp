@@ -1,8 +1,8 @@
-package com.example.firstkmp.shared
-
+package com.example.network
 
 import com.example.model.PriceInfo
 import io.ktor.client.HttpClient
+import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
@@ -25,23 +25,15 @@ val httpClient = HttpClient {
                 println("Ktor: $message")
             }
         }
-        level = LogLevel.BODY
+        level = LogLevel.INFO
     }
 }
-
-//suspend fun fetchCryptoPrices(coinIds: List<String>): Map<String, PriceInfo> {
-//    return httpClient.get("https://api.coingecko.com/api/v3/simple/price") {
-//        parameter("ids", coinIds.joinToString(","))
-//        parameter("vs_currencies", "usd")
-//    }.body<Map<String, PriceInfo>>()
-//}
 
 suspend fun fetchCryptoPrices(coinIds: List<String>): Map<String, PriceInfo> {
     val response = httpClient.get("https://api.coingecko.com/api/v3/simple/price") {
         parameter("ids", coinIds.joinToString(","))
         parameter("vs_currencies", "usd")
     }
-
     val rawBody = response.bodyAsText()
     println("Ktor raw response: $rawBody")
     return Json { ignoreUnknownKeys = true }.decodeFromString(rawBody)

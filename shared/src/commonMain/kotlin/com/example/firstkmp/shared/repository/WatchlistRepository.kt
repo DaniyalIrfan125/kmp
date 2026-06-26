@@ -1,10 +1,14 @@
 package com.example.firstkmp.shared.repository
 
-import com.example.firstkmp.shared.AppDatabase
-import com.example.firstkmp.shared.FavoriteCoin
-import com.example.firstkmp.shared.fetchCryptoPrices
+
+import com.example.database.AppDatabase
 import com.example.model.PriceInfo
 import kotlinx.coroutines.flow.Flow
+import com.example.database.toDomainModel
+import com.example.database.toEntity
+import com.example.model.FavoriteCoin
+import com.example.network.fetchCryptoPrices
+import kotlinx.coroutines.flow.map
 
 class WatchlistRepository(
     private val database: AppDatabase
@@ -15,13 +19,16 @@ class WatchlistRepository(
 
     fun getFavorites(): Flow<List<FavoriteCoin>> {
         return database.favoriteCoinDao().getAllFavorites()
+            .map { entities -> entities.map { it.toDomainModel() } }
     }
 
+
+
     suspend fun addFavorite(coin: FavoriteCoin) {
-        database.favoriteCoinDao().insert(coin)
+        database.favoriteCoinDao().insert(coin.toEntity())
     }
 
     suspend fun removeFavorite(coin: FavoriteCoin) {
-        database.favoriteCoinDao().delete(coin)
+        database.favoriteCoinDao().delete(coin.toEntity())
     }
 }

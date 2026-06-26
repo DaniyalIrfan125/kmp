@@ -1,5 +1,4 @@
-package com.example.firstkmp.shared
-
+package com.example.database
 
 import androidx.room.RoomDatabase
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
@@ -8,8 +7,6 @@ import kotlinx.coroutines.IO
 
 const val DB_FILE_NAME = "watchlist.db"
 
-// Each platform knows how to resolve its own writable file path differently:
-// Android needs a Context to find app-specific storage, iOS uses NSSearchPathForDirectoriesInDomains.
 expect fun getDatabaseBuilder(): RoomDatabase.Builder<AppDatabase>
 
 fun getRoomDatabase(builder: RoomDatabase.Builder<AppDatabase>): AppDatabase {

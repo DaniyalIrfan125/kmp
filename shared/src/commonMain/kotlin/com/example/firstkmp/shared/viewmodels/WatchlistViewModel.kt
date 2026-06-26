@@ -3,23 +3,16 @@ package com.example.firstkmp.shared.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.firstkmp.shared.FavoriteCoin
 import com.example.firstkmp.shared.repository.WatchlistRepository
+import com.example.model.FavoriteCoin
+import com.example.model.PriceDirection
+import com.example.model.PriceInfo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import com.example.model.PriceInfo
-import com.example.model.PriceDirection
-import androidx.lifecycle.viewModelScope
-
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
-import kotlin.collections.mapValues
 
 
 data class WatchlistUiState(

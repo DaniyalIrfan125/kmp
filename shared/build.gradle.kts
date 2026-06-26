@@ -72,6 +72,9 @@ kotlin {
             implementation(libs.navigation.compose)
 
             implementation(project(":core:model"))
+            implementation(project(":core:database"))
+            implementation(project(":core:network"))
+            implementation(project(":core:di"))
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
