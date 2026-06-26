@@ -43,6 +43,7 @@ suspend fun fetchCryptoPrices(coinIds: List<String>): Map<String, PriceInfo> {
         parameter("ids", coinIds.joinToString(","))
         parameter("vs_currencies", "usd")
     }
+
     val rawBody = response.bodyAsText()
     println("Ktor raw response: $rawBody")
     return Json { ignoreUnknownKeys = true }.decodeFromString(rawBody)
